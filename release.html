@@ -63,11 +63,29 @@
     <section class="content-section bg-dark text-white text-center" id="latest">
        <div class="container">
         <div class="content-section-heading">
-          <h2 class="mb-5">Patch 3.1</h2>
+          <h2 class="mb-5">Patch 3.1 (April 11th, 2018)</h2>
         </div>
         <div class="row">
           <div class="col-lg-10 mx-auto">
-             <p>Yeah this is a test.</p>
+             <h4>NEW</h4>
+             <ul>
+              <li><strong>SSH Key Tool</strong>: generate new SSH keys for all nodes.</li>
+              <li><strong>Configure IP Tool</strong>: configure a static IP and unique hostname for nodes.</li>
+              <li><strong>Update Tool</strong>: remotely update all packages for the nodes.</li>
+              <li><strong>Nodes File</strong>: file to hold all configured nodes.</li>
+              <li><strong>Base Net</strong>: wireless access point running on boot, removing need for monitor.</li>
+            </ul>
+            <h4>FIXES</h4>
+            <ul>
+              <li>Removed service restart from network-manager.</li>
+              <li>Fixed linking of wifi adaptor for networks (Mode 1).</li>
+              <li>All tools now use the Nodes file created by Config IP Tool.</li>
+            </ul>
+            <h4>IMPROVEMENTS</h4>
+            <ul>
+              <li>Tool output has been improved</li>
+              <li>Now ignoring non rpicluster nodes that own a DNS lease (like your computer!)</li>
+            </ul>
           </div>
         </div>
       </div>
