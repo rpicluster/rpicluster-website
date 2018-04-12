@@ -69,17 +69,17 @@
           <div class="col-lg-10 mx-auto">
              <h4 class="text-secondary mb-0">NEW</h4>
              <font size="+1">
-             <p size=""><strong>SSH Key Tool</strong>: generate new SSH keys for all nodes.<br />
+             <p class="text-left"><strong>SSH Key Tool</strong>: generate new SSH keys for all nodes.<br />
               <strong>Configure IP Tool</strong>: configure a static IP and unique hostname for nodes.<br />
               <strong>Update Tool</strong>: remotely update all packages for the nodes.<br />
               <strong>Nodes File</strong>: file to hold all configured nodes.<br />
               <strong>Base Net</strong>: wireless access point running on boot, removing need for monitor.<br /></p>
             <h4 class="text-secondary mb-0">FIXES</h4>
-            <p>- Removed service restart from network-manager.<br />
+            <p class="text-left">- Removed service restart from network-manager.<br />
             - Fixed linking of wifi adaptor for network mode 1.<br />
             - All tools now use the Nodes file created by Config IP Tool.<br /></p>
             <h4 class="text-secondary mb-0">IMPROVEMENTS</h4>
-            <p>- Tool output has been beautified.<br />
+            <p class="text-left">- Tool output has been beautified.<br />
             - Now ignoring non rpicluster nodes that own a DNS lease (like your computer!).</p>
             </font>
           </div>
