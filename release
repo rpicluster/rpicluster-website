@@ -26,7 +26,7 @@
   </head>
 
   <body id="page-top">
-    <a class="menu-toggle rounded" href="javascript:history.back()">
+    <a class="menu-toggle rounded" href="#page-top">
       <i class="fa fa-angle-left"></i>
     </a>
     <!-- Navigation -->
