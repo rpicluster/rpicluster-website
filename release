@@ -63,7 +63,7 @@
     <section class="content-section bg-dark text-white text-center" id="latest">
        <div class="container">
         <div class="content-section-heading">
-          <h2 class="mb-5">Release 3.1</h2>
+          <h2 class="mb-1">Release 3.1</h2>
           <h3 class="mb-5 text-secondary mb-0">04/11/18</h3>
         </div>
         <div class="row">
