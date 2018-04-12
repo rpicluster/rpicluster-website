@@ -28,7 +28,6 @@
   <body id="page-top">
     <a class="menu-toggle rounded" href="https://www.rpicluster.com">
       <i class="fa fa-angle-left"></i>
-      Back
     </a>
     <!-- Navigation -->
     <!-- <a class="menu-toggle rounded" href="#">
@@ -55,9 +54,9 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
              <p>
-             <a class="btn btn-primary btn-xl" href="../Server-3.1.zip" download>Server</a>
+             <a class="btn btn-primary btn-xl" href="Server-3.1.zip" download>Server</a>
              &nbsp&nbsp&nbsp
-             <a class="btn btn-primary btn-xl" href="../Client-3.1.zip" download>Client</a>
+             <a class="btn btn-primary btn-xl" href="Client-3.1.zip" download>Client</a>
              </p>
           </div>
         </div>
