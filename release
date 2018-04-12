@@ -27,9 +27,12 @@
 
   <body id="page-top">
     <a class="menu-toggle rounded" href="https://www.rpicluster.com">
-      <i class="fa fa-bars"></i>
+      <i class="fa fa-angle-left"></i>
     </a>
     <!-- Navigation -->
+    <nav>
+        <a href="https://www.rpicluster.com">
+    </nav>
     <!-- <a class="menu-toggle rounded" href="#">
       <i class="fa fa-bars"></i>
     </a> -->
