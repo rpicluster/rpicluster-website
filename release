@@ -26,13 +26,10 @@
   </head>
 
   <body id="page-top">
-    <a class="menu-toggle rounded" href="/">
+    <a href="/">
       <i class="fa fa-angle-left"></i>
     </a>
     <!-- Navigation -->
-    <nav class="sidebar-nav">
-        <a href="/"></a>
-    </nav>
     <!-- <a class="menu-toggle rounded" href="#">
       <i class="fa fa-bars"></i>
     </a> -->
