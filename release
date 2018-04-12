@@ -26,7 +26,7 @@
   </head>
 
   <body id="page-top">
-    <a class="menu-toggle rounded" href="https://www.rpicluster.com">
+    <a class="menu-toggle rounded" href="javascript:history.back()">
       <i class="fa fa-angle-left"></i>
     </a>
     <!-- Navigation -->
