@@ -26,12 +26,12 @@
   </head>
 
   <body id="page-top">
-    <a class="menu-toggle rounded" href="www.rpicluster.com">
+    <a class="menu-toggle rounded" href="/">
       <i class="fa fa-angle-left"></i>
     </a>
     <!-- Navigation -->
-    <nav id="sidebar-wrapper">
-        <a href="www.rpicluster.com"></a>
+    <nav class="sidebar-nav">
+        <a href="/"></a>
     </nav>
     <!-- <a class="menu-toggle rounded" href="#">
       <i class="fa fa-bars"></i>
