@@ -68,7 +68,7 @@
         </div>
         <div class="row">
           <div class="col-lg-10 mx-auto">
-             <h4 class="text-secondary mb-0 text-left mb-2">NEW</h4>
+             <h4 class="text-secondary mb-0 text-left mb-2">NEW FEATURES</h4>
              <font size="+1">
              <p class="text-left"><strong>SSH Key Tool</strong>: generate new SSH keys for all nodes.<br />
               <strong>Configure IP Tool</strong>: configure a static IP and unique hostname for nodes.<br />
