@@ -26,10 +26,15 @@
   </head>
 
   <body id="page-top">
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
     <!-- Navigation -->
-    <!-- <a class="menu-toggle rounded" href="#">
-      <i class="fa fa-bars"></i>
-    </a> -->
+    <a class="menu-toggle rounded" href="#" onclick="goBack()">
+      <i class="fa fa-angle-left"></i>
+    </a>
 
 <!-- Header
     <header class="masthead d-flex">
