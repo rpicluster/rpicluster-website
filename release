@@ -28,7 +28,7 @@
   <body id="page-top">
     <script>
     function goBack() {
-        window.location.href("www.rpicluster.com");
+        window.location.href = "www.rpicluster.com";
     }
     </script>
     <!-- Navigation -->
