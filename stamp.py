@@ -10,7 +10,12 @@ def find_point(magic_num, img):
     char = fd.read('1')
     while(char):
         #may need to read  char by char to find the exact string then return fd at that char then write
-        if(char == magic_num[pos] && )
+        if(pos == len(magic_num)):
+            return fd
+        elif(char == magic_num[pos]):
+            pos = pos + 1
+        else:
+            pos = 0
         char = fd.read('1')
     return fd
 
