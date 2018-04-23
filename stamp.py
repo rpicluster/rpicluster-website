@@ -1,33 +1,35 @@
-import zipfile, sys
+import sys, os
 
-magic_num = sys.argv[1]
-file = sys.argv[2]
+img = "Server.img"
 
 def find_point(magic_num, img):
-    #search .img for magic_num
+    #search .img for magic_num and return fd at that point
     pos = 0
-    fd = open(img, 'r+')
-    char = fd.read('1')
-    while(char):
-        #may need to read  char by char to find the exact string then return fd at that char then write
-        if(pos == len(magic_num)):
-            return fd
-        elif(char == magic_num[pos]):
+    fd = open(img, 'r')
+    char = ord(fd.read(1))
+    first = ""
+    second = ""
+    while(char != None):
+        first += chr(char)
+        if(char == ord(magic_num[pos]) and pos == len(magic_num)-1):
+            print("Found point")
+            break
+        elif(char == ord(magic_num[pos])):
             pos = pos + 1
         else:
             pos = 0
-        char = fd.read('1')
-    return fd
+        char = ord(fd.read(1))
+
+    second += fd.read()
+    return (first, second)
 
 
-
-
-zip_ref = zipfile.ZipFile(file, 'r')
-zip_ref.extractall(".")
-split = file.split('.')
-img = split[0] + ".img"
-fd = find_point(magic_num, img)
-
-
+print("calling find point on {}".format(img))
+parts = find_point("0100010001000001010101110100000101000101", img)
+print("after find point")
+fd = open(img, 'w')
+fd.write(parts[0])
+fd.write(" Alecs-AP password")
+fd.write(parts[1])
 fd.close()
-zip_ref.close()
+os.system("zip Server.zip Server.img")
