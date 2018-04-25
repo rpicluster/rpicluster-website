@@ -20,7 +20,7 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-    
+
     <link rel="icon" href="img/FinalPiHeadLogo.jpg">
 
   </head>
@@ -69,7 +69,7 @@
        <div class="container">
         <div class="content-section-heading">
           <h3 class="mb-1 text-secondary mb-0">04/11/18</h3>
-          <h2 class="mb-5">Release v3.1</h2>
+          <h2 class="mb-5">Release v0.6</h2>
         </div>
         <div class="row">
           <div class="col-lg-10 mx-auto">
@@ -80,13 +80,16 @@
               <strong>Update Tool</strong>: remotely update all packages for the nodes.<br />
               <strong>Nodes File</strong>: file to hold all configured nodes.<br />
               <strong>Base Net</strong>: wireless access point running on boot, removing need for monitor.<br /></p>
+              <strong>NFS</strong>: Network File System at ~/NFS use "sudo exportfs -a" to update the shared file system.<br /></p>
             <h4 class="text-secondary mb-0 text-left mb-2">FIXES</h4>
             <p class="text-left">- Removed service restart from network-manager.<br />
             - Fixed linking of wifi adaptor for network mode 1.<br />
             - All tools now use the Nodes file created by Config IP Tool.<br /></p>
             <h4 class="text-secondary mb-0 text-left mb-2">IMPROVEMENTS</h4>
             <p class="text-left">- Tool output has been beautified.<br />
-            - Now ignoring non rpicluster nodes that own a DNS lease (like your computer!).</p>
+            - Fixed linking of wifi adaptor for network mode 1.<br />
+            - Initial Cluster configuration now completed after only one reboot.<br />
+            - Now ignoring non rpicluster nodes that own a DNS lease (like your computer!).<br /></p>
             </font>
           </div>
         </div>
