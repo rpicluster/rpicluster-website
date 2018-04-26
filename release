@@ -78,17 +78,24 @@
              <p class="text-left"><strong>SSH Key Tool</strong>: generate new SSH keys for all nodes.<br />
               <strong>Configure IP Tool</strong>: configure a static IP and unique hostname for nodes.<br />
               <strong>Update Tool</strong>: remotely update all packages for the nodes.<br />
+              <strong>Reboot Tool</strong>: remotely reboot all nodes.<br />
+              <strong>Shutdown Tool</strong>: remotely shutdown all nodes.<br />
+              <strong>MPI support</strong>: Run mpi code on the cluster using the mpiHostfile located at ~/nfs/mpi/.<br />
+              <strong>Install Tool</strong>: remotely install specified package all nodes.<br />
               <strong>Nodes File</strong>: file to hold all configured nodes.<br />
               <strong>Base Net</strong>: wireless access point running on boot, removing need for monitor.<br /></p>
-              <strong>NFS</strong>: Network File System at ~/NFS use "sudo exportfs -a" to update the shared file system.<br /></p>
+              <strong>NFS</strong>: Automatically updated network File System at ~/nfs.<br /></p>
             <h4 class="text-secondary mb-0 text-left mb-2">FIXES</h4>
             <p class="text-left">- Removed service restart from network-manager.<br />
             - Fixed linking of wifi adaptor for network mode 1.<br />
+            - Fixed locales on nodes.<br />
+            - Fixed unary operator bug in configuration tool.<br />
             - All tools now use the Nodes file created by Config IP Tool.<br /></p>
             <h4 class="text-secondary mb-0 text-left mb-2">IMPROVEMENTS</h4>
             <p class="text-left">- Tool output has been beautified.<br />
-            - Fixed linking of wifi adaptor for network mode 1.<br />
             - Initial Cluster configuration now completed after only one reboot.<br />
+            - Updated hostname mapping for nodes.<br />
+            - Now using wpa2 and new 802.11n settings for hostapd configuration.<br />
             - Now ignoring non rpicluster nodes that own a DNS lease (like your computer!).<br /></p>
             </font>
           </div>
