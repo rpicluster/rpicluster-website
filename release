@@ -56,9 +56,9 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
              <p>
-             <a class="btn btn-primary btn-xl" href="rpcHead-042618.zip" download>Head</a>
+             <a class="btn btn-primary btn-xl" href="rpcHead-042718.zip" download>Head</a>
              &nbsp&nbsp&nbsp
-             <a class="btn btn-primary btn-xl" href="rpcNode-042618.zip" download>Node</a>
+             <a class="btn btn-primary btn-xl" href="rpcNode-042718.zip" download>Node</a>
              </p>
           </div>
         </div>
@@ -68,7 +68,7 @@
     <section class="content-section bg-dark text-white text-center" id="latest">
        <div class="container">
         <div class="content-section-heading">
-          <h3 class="mb-1 text-secondary mb-0">04/26/18</h3>
+          <h3 class="mb-1 text-secondary mb-0">04/27/18</h3>
           <h2 class="mb-5">Release v0.7</h2>
         </div>
         <div class="row">
@@ -89,6 +89,7 @@
             <p class="text-left">- Removed service restart from network-manager.<br />
             - Fixed linking of wifi adaptor for network mode 1.<br />
             - Fixed locales on nodes.<br />
+            - Fixed problem with dnsmasq leases not updating after rpc-configure.<br />
             - Fixed unary operator bug in configuration tool.<br />
             - All tools now use the Nodes file created by Config IP Tool.<br /></p>
             <h4 class="text-secondary mb-0 text-left mb-2">IMPROVEMENTS</h4>
