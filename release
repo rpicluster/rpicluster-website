@@ -95,7 +95,7 @@
             <p class="text-left">- Tool output has been beautified.<br />
             - Initial Cluster configuration now completed after only one reboot.<br />
             - Updated hostname mapping for nodes.<br />
-            - Now using wpa2 and new 802.11n settings for hostapd configuration.<br />
+            - Now using WPA2 and new 802.11n settings for hostapd configuration.<br />
             - Now ignoring non rpicluster nodes that own a DNS lease (like your computer!).<br /></p>
             </font>
           </div>
