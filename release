@@ -108,7 +108,7 @@
     <footer class="footer text-center">
       <div class="container">
       <p>Emails:</p>
-        <p><a href="mailto:taggartalec@gmail.com">taggartalec@gmail</a><br />
+        <p><strong>Alec Taggart</strong>: <a href="mailto:taggartalec@gmail.com">taggartalec@gmail</a> <strong>Derek Dang</strong>: 
           <a href="mailto:dqdang17@gmail.com">dqdang17@gmail</a></p>
         <ul class="list-inline mb-5">
 <!--           <li class="list-inline-item">
