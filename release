@@ -83,7 +83,7 @@
               <strong>MPI support</strong>: Run mpi code on the cluster using the mpiHostfile located at ~/nfs/mpi/.<br />
               <strong>Install Tool</strong>: remotely install specified package all nodes.<br />
               <strong>Nodes File</strong>: file to hold all configured nodes.<br />
-              <strong>Base Net</strong>: wireless access point running on boot, removing need for monitor.<br /></p>
+              <strong>Base Net</strong>: wireless access point running on boot, removing need for monitor.<br />
               <strong>NFS</strong>: Automatically updated network File System at ~/nfs.<br /></p>
             <h4 class="text-secondary mb-0 text-left mb-2">FIXES</h4>
             <p class="text-left">- Removed service restart from network-manager.<br />
