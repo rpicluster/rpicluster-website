@@ -2,7 +2,8 @@ import sys, os
 
 img = "Server.img"
 
-password = input("Enter a password.")
+network_name = input("Enter a name for your network: ")
+password = input("Enter a password: ")
 # password = ''.join(format(ord(x), 'b') for x in password)
 
 def find_point(magic_num, img):
@@ -22,7 +23,8 @@ def find_point(magic_num, img):
         else:
             pos = 0
         char = ord(fd.read(1))
-    null += fd.read(len(password))
+    name = fd.read(len(name))
+    password = fd.read(len(password))
     second += fd.read()
     return (first, second)
 
@@ -33,6 +35,7 @@ print("after find point")
 fd = open(img, 'w')
 
 fd.write(parts[0])
+fd.write(network_name)
 fd.write(password)
 fd.write(parts[1])
 
