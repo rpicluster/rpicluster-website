@@ -1,18 +1,25 @@
+# purpose: find the magic string in the image file and concatenate a string to it.
+
 import sys, os
+import zipfile
 
+zip_ref = zipfile.ZipFile("Server.zip", 'r')
+zip_ref.extractall(".")
+zip_ref.close()
 img = "Server.img"
+# img = "testing"
 
-network_name = input("Enter a name for your network: ")
-password = input("Enter a password: ")
-# password = ''.join(format(ord(x), 'b') for x in password)
+network_name = raw_input("Enter a network name: ")
+password = raw_input("Enter a password: ")
+network_name = ''.join(format(ord(x), 'b') for x in network_name)
+password = ''.join(format(ord(x), 'b') for x in password)
 
 def find_point(magic_num, img):
-    #search .img for magic_num and return fd at that point
     pos = 0
-    fd = open(img, 'r')
+    fd = open(img, 'rb')
     char = ord(fd.read(1))
-    first = ""
-    second = ""
+    first = "" # first is the first half of the image, including the magic number
+    second = "" # second is the second half.
     while(char != None):
         first += chr(char)
         if(char == ord(magic_num[pos]) and pos == len(magic_num)-1):
@@ -23,21 +30,24 @@ def find_point(magic_num, img):
         else:
             pos = 0
         char = ord(fd.read(1))
-    name = fd.read(len(name))
-    password = fd.read(len(password))
+
+    null = fd.read(len(network_name))
+    null += fd.read(len(password)) # need to offset by the size of the string
     second += fd.read()
     return (first, second)
 
 
-print("calling find point on {}".format(img))
+print("Calling find point on {}".format(img))
 parts = find_point("0100010001000001010101110100000101000101", img)
-print("after find point")
-fd = open(img, 'w')
+print("After find point")
 
+fd = open(img, 'wb')
+print("writing first part of image")
 fd.write(parts[0])
+print("writing network anem and password concatenate to magic string")
 fd.write(network_name)
 fd.write(password)
+print("writing second part of image")
 fd.write(parts[1])
-
+print("Finished writing")
 fd.close()
-os.system("zip Server.zip Server.img")
