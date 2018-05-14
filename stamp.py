@@ -12,7 +12,9 @@ img = "Server.img"
 network_name = raw_input("Enter a network name: ")
 password = raw_input("Enter a password: ")
 network_name = ''.join(format(ord(x), 'b') for x in network_name)
+len_network = len(network_name)
 password = ''.join(format(ord(x), 'b') for x in password)
+len_pass = len(password)
 
 def find_point(magic_num, img):
     pos = 0
@@ -31,8 +33,8 @@ def find_point(magic_num, img):
             pos = 0
         char = ord(fd.read(1))
 
-    null = fd.read(len(network_name))
-    null += fd.read(len(password)) # need to offset by the size of the string
+    null = fd.read(len_network)
+    null += fd.read(len_pass) # need to offset by the size of the string
     second += fd.read()
     return (first, second)
 
@@ -44,7 +46,9 @@ print("After find point")
 fd = open(img, 'wb')
 print("writing first part of image")
 fd.write(parts[0])
-print("writing network anem and password concatenate to magic string")
+print("writing network name and password concatenate to magic string")
+# fd.write("{0:08b}".format(len_network))
+# fd.write("{0:08b}".format(len_pass))
 fd.write(network_name)
 fd.write(password)
 print("writing second part of image")
