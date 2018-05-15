@@ -33,7 +33,8 @@ def find_point(magic_num, img):
             pos = 0
         char = ord(fd.read(1))
 
-    null = fd.read(len_network)
+    null = fd.read(16)
+    null += fd.read(len_network)
     null += fd.read(len_pass) # need to offset by the size of the string
     second += fd.read()
     return (first, second)
