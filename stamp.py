@@ -5,8 +5,8 @@ import zipfile
 import fnmatch
 import os
 
-network_name = input("Enter a network name: ")
-password = input("Enter a password: ")
+network_name = raw_input("Enter a network name: ")
+password = raw_input("Enter a password: ")
 # network_name = ''.join(format(ord(x), 'b') for x in network_name)
 network_name = network_name.encode('utf-8')
 # password = ''.join(format(ord(x), 'b') for x in password)
@@ -17,33 +17,36 @@ len_pass = len(password) * 8
 def find_point(magic_num, img):
     pos = 0
     fd = open(img, 'rb')
-    char = ord(fd.read(1))
-    first = "" # first is the first half of the image, including the magic number
+    char = fd.read(1)
+    first = bytearray() # first is the first half of the image, including the magic number
+    # second = "" # second is the second half.
     while(char != None):
-        first += chr(char)
-        if(char == ord(magic_num[pos]) and pos == len(magic_num)-1):
+        first += char
+        if(ord(char) == ord(magic_num[pos]) and pos == len(magic_num)-1):
             break
-        elif(char == ord(magic_num[pos])):
+        elif(ord(char) == ord(magic_num[pos])):
             pos = pos + 1
         else:
             pos = 0
-        char = ord(fd.read(1))
+        char = fd.read(1)
 
     null = fd.read(16)
     null += fd.read(len_network)
-    null += fd.read(len_pass) # need to offset
+    null += fd.read(len_pass) # need to offset by the size of the string
+    second = bytearray()
     while True:
-        second += fd.read(64 * (1 << 20)) # Read 64 MB at a time; big, but not memory busting
-        if not second:  # Reached EOF
+        block = fd.read(64 * (1 << 20)) # Read 64 MB at a time; big, but not memory busting
+        if not block:  # Reached EOF
             break
+        second += block
     return (first, second)
 
 def write_img(img):
     parts = find_point("0100010001000001010101110100000101000101", img)
     fd = open(img, 'wb')
     fd.write(parts[0])
-    fd.write("{0:08b}".format(len_network))
-    fd.write("{0:08b}".format(len_pass))
+    fd.write("{0:08b}".format(len_network).encode('utf-8'))
+    fd.write("{0:08b}".format(len_pass).encode('utf-8'))
     fd.write(network_name)
     fd.write(password)
     fd.write(parts[1])
