@@ -19,7 +19,6 @@ def find_point(magic_num, img):
     fd = open(img, 'rb')
     char = ord(fd.read(1))
     first = "" # first is the first half of the image, including the magic number
-    second = "" # second is the second half.
     while(char != None):
         first += chr(char)
         if(char == ord(magic_num[pos]) and pos == len(magic_num)-1):
@@ -35,7 +34,7 @@ def find_point(magic_num, img):
     null += fd.read(len_pass) # need to offset
     while True:
         second += fd.read(64 * (1 << 20)) # Read 64 MB at a time; big, but not memory busting
-        if not block:  # Reached EOF
+        if not second:  # Reached EOF
             break
     return (first, second)
 
