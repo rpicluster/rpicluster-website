@@ -51,7 +51,7 @@ def find_img_files():
 
     for file in os.listdir('.'):
         if fnmatch.fnmatch(file, '*.zip'):
-            zip_ref = zipfile.ZipFile("Server.zip", 'r')
+            zip_ref = zipfile.ZipFile(file, 'r')
             zip_ref.extractall(".")
             zip_ref.close()
 
