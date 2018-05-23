@@ -21,7 +21,6 @@ def find_point(magic_num, img):
     while(char != None):
         first += chr(char)
         if(char == ord(magic_num[pos]) and pos == len(magic_num)-1):
-            print("Found point")
             break
         elif(char == ord(magic_num[pos])):
             pos = pos + 1
