@@ -59,8 +59,8 @@ def find_img_files():
         if fnmatch.fnmatch(file, '*.img'):
             img_files.append(file)
 
-    write_img(img_files[0])
-    write_img(img_files[1])
+    for file in img_files:
+        write_img(file)
 
 
 find_img_files()
