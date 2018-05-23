@@ -2,12 +2,8 @@
 
 import sys, os
 import zipfile
-
-zip_ref = zipfile.ZipFile("Server.zip", 'r')
-zip_ref.extractall(".")
-zip_ref.close()
-img = "Server.img"
-# img = "testing"
+import fnmatch
+import os
 
 network_name = raw_input("Enter a network name: ")
 password = raw_input("Enter a password: ")
@@ -39,20 +35,32 @@ def find_point(magic_num, img):
     second += fd.read()
     return (first, second)
 
+def write_img(img):
+    parts = find_point("0100010001000001010101110100000101000101", img)
+    fd = open(img, 'wb')
+    fd.write(parts[0])
+    fd.write("{0:08b}".format(len_network))
+    fd.write("{0:08b}".format(len_pass))
+    fd.write(network_name)
+    fd.write(password)
+    fd.write(parts[1])
+    fd.close()
 
-print("Calling find point on {}".format(img))
-parts = find_point("0100010001000001010101110100000101000101", img)
-print("After find point")
+def find_img_files():
+    img_files = []
 
-fd = open(img, 'wb')
-print("writing first part of image")
-fd.write(parts[0])
-print("writing network name and password concatenate to magic string")
-fd.write("{0:08b}".format(len_network))
-fd.write("{0:08b}".format(len_pass))
-fd.write(network_name)
-fd.write(password)
-print("writing second part of image")
-fd.write(parts[1])
-print("Finished writing")
-fd.close()
+    for file in os.listdir('.'):
+        if fnmatch.fnmatch(file, '*.zip'):
+            zip_ref = zipfile.ZipFile("Server.zip", 'r')
+            zip_ref.extractall(".")
+            zip_ref.close()
+
+    for file in os.listdir('.'):
+        if fnmatch.fnmatch(file, '*.img'):
+            img_files.append(file)
+
+    write_img(img_files[0])
+    write_img(img_files[1])
+
+
+find_img_files()
