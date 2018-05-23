@@ -5,8 +5,8 @@ import zipfile
 import fnmatch
 import os
 
-network_name = input("Enter a network name: ")
-password = input("Enter a password: ")
+network_name = raw_input("Enter a network name: ")
+password = raw_input("Enter a password: ")
 network_name = ''.join(format(ord(x), 'b') for x in network_name)
 password = ''.join(format(ord(x), 'b') for x in password)
 len_network = len(network_name) * 8
