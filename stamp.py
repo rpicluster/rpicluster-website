@@ -32,8 +32,11 @@ def find_point(magic_num, img):
 
     null = fd.read(16)
     null += fd.read(len_network)
-    null += fd.read(len_pass) # need to offset by the size of the string
-    second += fd.read()
+    null += fd.read(len_pass) # need to offset
+    while True:
+        second += f.read(64 * (1 << 20)) # Read 64 MB at a time; big, but not memory busting
+        if not block:  # Reached EOF
+            break
     return (first, second)
 
 def write_img(img):
