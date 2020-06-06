@@ -1,2 +1,2 @@
 # rpicluster-website
-www.rpicluster.com
+https://www.rpicluster.com
