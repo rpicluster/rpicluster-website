@@ -33,7 +33,7 @@
         "simple-line-icons": "^2.4.1"
     },
     "devDependencies": {
-        "browser-sync": "2.29.0",
+        "browser-sync": "2.29.1",
         "gulp": "^4.0.2",
         "gulp-clean-css": "4.3.0",
         "gulp-header": "2.0.9",
